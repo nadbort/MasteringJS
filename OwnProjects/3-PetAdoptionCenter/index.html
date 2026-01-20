@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Adoption Filter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>🐾 Find Your Best Friend</h1>
+
+    <div class="container">
+        <form id="search-form">
+            <div class="filter-group">
+                <label for="type">Animal Type</label>
+                <select id="type">
+                    <option value="">All</option>
+                    <option value="Dog">Dog</option>
+                    <option value="Cat">Cat</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="color">Color</label>
+                <select id="color">
+                    <option value="">All</option>
+                    <option value="Black">Black</option>
+                    <option value="White">White</option>
+                    <option value="Orange">Orange</option>
+                    <option value="Brown">Brown</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="personality">Personality</label>
+                <select id="personality">
+                    <option value="">All</option>
+                    <option value="Playful">Playful</option>
+                    <option value="Calm">Calm</option>
+                    <option value="Energetic">Energetic</option>
+                </select>
+            </div>
+        </form>
+
+        <div id="results" class="results-grid"></div>
+    </div>
+    
+    <script src="db.js"></script>
+    <script src="script.js"></script>
+    
+</body>
+</html>
