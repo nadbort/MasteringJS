@@ -21,6 +21,15 @@ function cargarEventListeners() {
         limpiarHTML();
     })
 
+    //Cuando cargue el documento mostrar productos guardados en local storage
+
+    document.addEventListener('DOMContentLoaded', () => {
+
+       articulosCarrito = JSON.parse(localStorage.getItem('producto')) || [];
+
+       carritoHTML();
+    })
+
 }
 
 //Funciones
@@ -167,6 +176,17 @@ function carritoHTML() {
        contenedorCarrito.appendChild(row);
 
    } )
+
+   sincronizarStorage();
+
+}
+
+
+//Function sincronizar Storage
+
+function sincronizarStorage(){
+
+  localStorage.setItem('producto', JSON.stringify(articulosCarrito));
 
 }
 
