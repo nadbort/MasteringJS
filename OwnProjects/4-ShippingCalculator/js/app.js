@@ -1,3 +1,5 @@
+const loader = document.querySelector('#loader');
+
 //Constructor Shipping
 function Shipping(zone, weight, speed){
 
@@ -59,6 +61,7 @@ function UI(){};
 
 UI.prototype.uiResults = function(totalQuantity, shippingDetails){
 
+
       const {zone, weight, speed} = shippingDetails;
 
 
@@ -81,8 +84,19 @@ UI.prototype.uiResults = function(totalQuantity, shippingDetails){
 
       const resultBox = document.querySelector('#result');
 
-      resultBox.appendChild(div);
+      while(resultBox.firstChild){
+         
+         resultBox.removeChild(resultBox.firstChild);
 
+      }
+
+      
+     setTimeout( () => {
+
+        resultBox.appendChild(div);
+
+
+     }, 3000 )
 
 }
 
@@ -108,9 +122,12 @@ UI.prototype.uiMessages = (message, type) => {
 
    formShipping.appendChild(div);
 
+   loader.style.display = 'block';
+
    setTimeout( () => {
 
       div.remove();
+      loader.style.display = 'none';
 
    }, 3000 )
 
