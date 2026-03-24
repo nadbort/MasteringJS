@@ -22,4 +22,4 @@ class Cliente {
 const juan = new Cliente('Juan', 400);
 console.log(juan.mostrarInformacion());
 
-console.log(juan);
+console.log(Cliente.bienvenida());
